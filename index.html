@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Author Hub</title>
+    <!-- Load Tailwind CSS (via CDN for simplicity) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Define Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <!-- The root container where React will render the entire application -->
+    <div id="root"></div>
+
+    <!-- The script block to load the React application -->
+    <script type="module">
+        import React from 'https://esm.sh/react@18.2.0';
+        import ReactDOM from 'https://esm.sh/react-dom@18.2.0';
+        import App from './UniversalBookHub.jsx';
+
+        // Wait for the DOM to be ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const rootElement = document.getElementById('root');
+            if (rootElement) {
+                // Render the main App component into the root element
+                ReactDOM.createRoot(rootElement).render(
+                    React.createElement(App, null)
+                );
+            }
+        });
+    </script>
+</body>
+</html>
